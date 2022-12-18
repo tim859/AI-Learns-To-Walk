@@ -1,3 +1,5 @@
+// some parts of this class partially inspired by https://www.youtube.com/watch?v=Yq0SfuiOVYE&t=1492s&ab_channel=UnderpowerJet
+
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -71,7 +73,7 @@ public class Controller : MonoBehaviour
                     nets[i] = new NeuralNetwork(nets[i + (populationSize / 2)]);
                     nets[i].Mutate();
 
-                    nets[i + (populationSize / 2)] = new NeuralNetwork(nets[i + (populationSize / 2)]); //too lazy to write a reset neuron matrix values method....so just going to make a deepcopy lol
+                    nets[i + (populationSize / 2)] = new NeuralNetwork(nets[i + (populationSize / 2)]);
                 }
 
                 for (int i = 0; i < populationSize; i++)

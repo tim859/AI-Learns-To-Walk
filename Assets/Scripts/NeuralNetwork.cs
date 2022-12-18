@@ -1,9 +1,8 @@
+// This class heavily inspired by https://www.youtube.com/watch?v=Yq0SfuiOVYE&t=1492s&ab_channel=UnderpowerJet
+
 using System.Collections.Generic;
 using System;
 
-/// <summary>
-/// Neural Network C# (Unsupervised)
-/// </summary>
 public class NeuralNetwork : IComparable<NeuralNetwork>
 {
     private int[] layers; //layers
@@ -11,11 +10,6 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
     public float[][][] weights; //weight matrix
     private float fitness; //fitness of the network
 
-
-    /// <summary>
-    /// Initilizes and neural network with random weights
-    /// </summary>
-    /// <param name="layers">layers to the neural network</param>
     public NeuralNetwork(int[] layers)
     {
         //deep copy of layers of this network 
@@ -31,10 +25,6 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         InitWeights();
     }
 
-    /// <summary>
-    /// Deep copy constructor 
-    /// </summary>
-    /// <param name="copyNetwork">Network to deep copy</param>
     public NeuralNetwork(NeuralNetwork copyNetwork)
     {
         layers = new int[copyNetwork.layers.Length];
@@ -62,9 +52,6 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         }
     }
 
-    /// <summary>
-    /// Create neuron matrix
-    /// </summary>
     private void InitNeurons()
     {
         //Neuron Initilization
@@ -78,9 +65,6 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         neurons = neuronsList.ToArray(); //convert list to array
     }
 
-    /// <summary>
-    /// Create weights matrix.
-    /// </summary>
     private void InitWeights()
     {
 
@@ -114,11 +98,6 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         weights = weightsList.ToArray(); //convert to 3D array
     }
 
-    /// <summary>
-    /// Feed forward this neural network with a given input array
-    /// </summary>
-    /// <param name="inputs">Inputs to network</param>
-    /// <returns></returns>
     public float[] FeedForward(float[] inputs)
     {
         //Add inputs to the neuron matrix
@@ -146,9 +125,6 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         return neurons[neurons.Length - 1]; //return output layer
     }
 
-    /// <summary>
-    /// Mutate neural network weights
-    /// </summary>
     public void Mutate()
     {
         for (int i = 0; i < weights.Length; i++)
@@ -206,11 +182,6 @@ public class NeuralNetwork : IComparable<NeuralNetwork>
         return fitness;
     }
 
-    /// <summary>
-    /// Compare two neural networks and sort based on fitness
-    /// </summary>
-    /// <param name="other">Network to be compared to</param>
-    /// <returns></returns>
     public int CompareTo(NeuralNetwork other)
     {
         if (other == null) return 1;
