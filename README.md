@@ -1,6 +1,7 @@
 # AI Learns To Walk
 
-A feed forward neural network that rewards AI agents that move forward while punishing those that don't. The agents have legs with 6 movable joints: <img width="220" height="653" alt="ai pic 1" src="https://github.com/user-attachments/assets/61978b49-d95c-422f-9a18-59fcd7676c81" />
+A feed forward neural network that rewards AI agents that move forward while punishing those that don't. The agents have legs with 6 movable joints: 
+<img width="220" height="653" alt="ai pic 1" src="https://github.com/user-attachments/assets/61978b49-d95c-422f-9a18-59fcd7676c81" />
 
 The neural network can move all 6 of these joints. For the first few generations, the neural network has no idea what to do and the agents flail around uselessly. As the generations increase, the agents improve and can become incredibly fast and agile after a few hundred generations.
 
